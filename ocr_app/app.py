@@ -20,7 +20,7 @@ from io import BytesIO
 
 UPLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '/uploads/'
 DOWNLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '\\downloads\\'
-ALLOWED_EXTENSIONS = {'jpg'}
+ALLOWED_EXTENSIONS = {'jpg','jpeg','png'}
 
 pytesseract.pytesseract.tesseract_cmd = 'C:\\Users\\akile\\Tesseract-OCR\\tesseract'
 
@@ -269,40 +269,40 @@ def ocr(folder,address,pob):
 	f7=h12.max()
 
 
-	WN=0.2
-	FN=0.2
-	LN=0.0
-	Addr=0.5
-	Coun=0.29
-	POB=0.25
-	PNo=0.27
+	WN=0.76
+	FN=0.72
+	LN=0.80
+	Addr=0.59
+	Coun=0.59
+	POB=0.75
+	PNo=0.47
 	Gen=1.0
-	EDate=0.28
-	POI=0.2
-	CounDes=0.2
+	EDate=0.88
+	POI=0.69
+	CounDes=0.6
 	n = 0
-	if (WN>f1):
-	    n+=0.166
-	    if (FN<f2):
-	        n+=0.256
-	        if (LN>f3):
-	            n+=0.356
-	            if (Addr>f4):
-	                n+=0.466
-	                if (Gen>f5):
-	                    n+=0.556
-	                    if (Coun>f6):
-	                        n+=0.656
-	                        if (POB>f7):
-	                            n+=0.756
-	                            if (PNo>f8):
-	                                n+=0.866
-	                                if (EDate>f10):
-	                                    n+=0.956
-	                                    if (POI>f11):
-	                                        n+=0.1056
-	                                        if (CounDes>f12):
-	                                            n+=0.11056
+	if(WN>f1):
+		n+=0.166
+		if(FN>f2):
+			n+=0.055
+			if (LN>f3):
+				n+=0.055
+				if (Addr>f4):
+					n+=0.166
+					if (Gen>f5):
+						n+=0.055
+						if (Coun>f6):
+							n+=0.055
+							if (POB>f7):
+								n+=0.055
+								if (PNo>f8):
+									n+=0.166
+									if (EDate>f10):
+										n+=0.055
+										if (POI>f11):
+											n+=0.055
+											if (CounDes>f12):
+												n+=0.055
 #	print(n)
 	if 0 <=n <= 0.4:
 		e="You are eligible to apply for Loan"
