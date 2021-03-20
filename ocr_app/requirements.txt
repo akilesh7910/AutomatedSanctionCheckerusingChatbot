@@ -8,7 +8,7 @@ httplib2==0.18.1
 imageio==2.8.0
 iso3166==1.0.1
 itsdangerous==1.1.0
-Jinja2==2.11.2
+Jinja2==2.11.3
 joblib==0.15.1
 kiwisolver==1.2.0
 MarkupSafe==1.1.1
